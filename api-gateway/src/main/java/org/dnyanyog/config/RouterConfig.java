@@ -11,8 +11,8 @@ public class RouterConfig {
 	@Bean
 	public RouteLocator customRouteLocator(RouteLocatorBuilder builder) {
 		return builder.routes()
-				.route("directory_route", r -> r.path("/api/user/v1/create/**").uri("http://localhost:8081"))
-				.route("directory_route", r -> r.path("/api/user/v1/user/{user_id}**").uri("http://localhost:8081"))
-				.route("event_route", r -> r.path("/event/venue/**").uri("http://localhost:8083")).build();
+				.route("auth_route", r -> r.path("/api/v1/auth/user/**").uri("http://localhost:8081"))
+				.route("auth_route", r -> r.path("/api/v1/auth/user/{userId}**").uri("http://localhost:8081"))
+				.route("flight_route", r -> r.path("/auth/flight/**").uri("http://localhost:8083")).build();
 	}
 }
